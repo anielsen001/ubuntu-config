@@ -1,0 +1,16 @@
+#+TITLE: Google Chrome
+
+#+begin_src sh
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.deb
+#+end_src
+
+The install should configure for updates. To verify
+
+#+begin_src sh
+cat /etc/apt/sources.list.d/google-chrome.list
+#+end_src
+
+* References
+
+https://linuxize.com/post/how-to-install-google-chrome-web-browser-on-ubuntu-20-04/

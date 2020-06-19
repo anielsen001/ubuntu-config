@@ -1,0 +1,90 @@
+#+TITLE: set up yubikey to work with ubuntu 
+
+This configuration is primarily for Ubuntu 20.04. I have implemented this setup on Ubunut 16.04 and 14.04 previously, but some of the primary tools and the pam module name have changed. 
+
+The older OS used the pam_yubico module and required more configuration of the yubikey before you could begin. 
+
+* Install Yubikey software
+
+You need to install the ppa and them the required modules
+
+#+begin_src sh
+sudo add-apt-repository ppa:yubico/stable
+sudo apt-get update
+sudo apt-get install libpam-u2f
+#+end_src
+
+* configure groups and accounts
+
+I drew alot of this guide, which is older [[https://code.litomisky.com/2014/01/01/ubuntu-yubikey-2fa-config/]], 
+but lays out the basic structure:
+ - Create a group (called yubikey) and put users that require the yubikey in this group.
+ 
+#+begin_src sh
+sudo groupadd yubikey
+sudo usermod -aG yubikey username
+#+end_src
+
+ - Create an admin user with all privileges that does NOT need a yubikey to login. This will be your way in to fix things if needed. After everything is working, give this user a complicated password and save it somewhere safe.
+
+* Create U2F keys
+
+#+begin_src sh
+mkdir ~/.yubico
+pamu2fcfg > ~/.yubuco/u2f_keys
+#+end_src
+
+I like to put the keys in a directory controlled root to protect them
+
+#+begin_src sh
+sudo mkidr /var/yubico
+sudo cp .yuboco/u2f_keys /var/yubico/u2f_keys
+#+end_src
+
+In order to use the u2f_keys here, the username for the key must be put into the u2f_keys files. This step will allow the key to be associated with the user. This part is left out of the yubikey guide.
+
+The u2f_keys file will look like this
+
+#+begin_src sh
+:<bunch of random looking characters>
+#+end_src
+
+Edit it to include the username associated with the key befor the colon
+
+#+begin_src sh
+user:<bunch of random looking characters>
+#+end_src
+
+* configure pam
+
+create a file /etc/pam.d/yubikey:
+
+#+begin_src
+# should be inluded in
+# common-auth before all the other commands
+# use:
+# @include yubikey
+auth [success=1 default=ignore] pam_succeed_if.so quiet user notingroup yubikey
+# auth	sufficient	pam_u2f.so authfile=/var/yubico/u2f_keys
+auth	required	pam_u2f.so authfile=/var/yubico/u2f_keys
+
+# example of debug if there are issues
+#auth	required	pam_u2f.so authfile=/var/yubico/u2f_keys debug debug_file=/var/log/pam_u2f.log
+#+end_src
+
+If you include this file in common-auth as suggested, this will check for a yubikey for all users in the yubikey group. 
+
+If there are issues, use the last line with the debug information turned on, and look to see what the error messages are. This is how I found out that the username needed to be in the u2f_keys files.
+
+If you only want the yubikey to be used for certain authentication operations like sudo or login, you can @include the yubikey file in those configs.
+
+
+* References:
+
+[[https://support.yubico.com/support/solutions/articles/15000010964-enabling-the-yubico-ppa-on-ubuntu][Yubikey ppa]]
+
+[[https://support.yubico.com/support/solutions/articles/15000011356-ubuntu-linux-login-guide-u2f][Yubikey login guide]]
+
+[[https://developers.yubico.com/pam-u2f/][Yubikey pam_u2f documentation]]
+
+[[https://code.litomisky.com/2014/01/01/ubuntu-yubikey-2fa-config/]]

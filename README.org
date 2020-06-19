@@ -1,0 +1,4 @@
+#+TITLE: Ubuntu configuration notes
+
+These are primarily focused on ubuntu 20.04 LTS. 
+

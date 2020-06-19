@@ -11,3 +11,32 @@ git checkout tags/0.80 -b 0.80
 Building instructions are here:
 http://astrometry.net/doc/readme.html
 
+an needs python3 with numpy and pyfits installed. I usually build my own python and track python modules in virtual environments. 
+
+#+begin_src sh
+cd astrometry.net
+python3 -m venv an_venv
+source av_venv/bin/activate
+python3 -m pip install numpy pyfits
+#+end_src
+
+
+* an needs cfitsio
+
+#+begin_src
+wget http://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/cfitsio-3.48.tar.gz
+sudo apt install gfortran curl
+
+./configure --prefix=$HOME/sw
+make -j12
+make install
+
+export LDFLAGS="-L$HOME/sw/lib"
+export CLFAGS="-I$HOME/sw/include"
+export PKG_CONFIG_PATH=$HOME/sw/cfitsio/cfitsio-3.48
+
+#+end_src
+
+* other dependencies
+
+sudo apt install libcairo2-dev libnetpbm10-dev netpbm libpng-dev libjpeg-dev libbz2-dev

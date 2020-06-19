@@ -1,0 +1,13 @@
+#+TITLE: Building astrometry.net
+
+https://astrometry.net
+https://github.com/dstndstn/astrometry.net
+
+git clone git@github.com:dstndstn/astrometry.net.git
+
+switch to a particular tag
+git checkout tags/0.80 -b 0.80
+
+Building instructions are here:
+http://astrometry.net/doc/readme.html
+

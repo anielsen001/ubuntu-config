@@ -1,0 +1,10 @@
+# should be included in
+# common-auth before all the other commands
+# use:
+# @include yubikey
+auth [success=1 default=ignore] pam_succeed_if.so quiet user notingroup yubikey
+# auth	sufficient	pam_u2f.so authfile=/var/yubico/u2f_keys
+auth	required	pam_u2f.so authfile=/var/yubico/u2f_keys
+
+# example of debug if there are issues
+#auth	required	pam_u2f.so authfile=/var/yubico/u2f_keys debug debug_file=/var/log/pam_u2f.log

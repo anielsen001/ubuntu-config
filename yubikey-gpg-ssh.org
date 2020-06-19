@@ -1,0 +1,11 @@
+#+TITLE: use the yubikey as a GPG and SSH key
+
+* Install card readers tools
+
+#+begin_src sh
+sudo apt install gnupg pcscd scdaemon
+#+end_src
+
+* References:
+
+https://gist.github.com/artizirk/d09ce3570021b0f65469cb450bee5e29

@@ -1,0 +1,17 @@
+#+TITLE: python
+
+Usually build python from scratch. 
+
+This will install the required libraries:
+#+begin_src sh
+sudo apt install libssl-dev zlib1g-dev libbz2-dev ncurses-dev uuid-dev
+sudo apt install build-essential libncurses5-dev libgdbm-dev libnss3-dev libreadline-dev libffi-dev tk-dev
+sudo apt install libsqlite3-dev lzma-dev libgdbm-compat-dev lzma
+#+end_src
+
+Build python and install it into a user directory:
+#+begin_src sh
+./configure --prefix=$HOME/sw --enable-shared --enable-optimizations --with-ensurepip=upgrade
+make -j12
+make install
+#+end_src

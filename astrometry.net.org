@@ -34,9 +34,18 @@ make install
 export LDFLAGS="-L$HOME/sw/lib"
 export CLFAGS="-I$HOME/sw/include"
 export PKG_CONFIG_PATH=$HOME/sw/cfitsio/cfitsio-3.48
-
 #+end_src
 
 * other dependencies
 
-sudo apt install libcairo2-dev libnetpbm10-dev netpbm libpng-dev libjpeg-dev libbz2-dev
+#+begin_src
+sudo apt install libcairo2-dev libnetpbm10-dev netpbm libpng-dev libjpeg-dev libbz2-dev swig
+#+end_src
+
+* build
+
+#+begin_src
+make 
+make extra
+make install INSTALL_DIR=$HOME/sw
++end_src

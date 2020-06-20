@@ -48,7 +48,7 @@ sudo apt install libcairo2-dev libnetpbm10-dev netpbm libpng-dev libjpeg-dev lib
 make 
 make extra
 make install INSTALL_DIR=$HOME/sw
-+end_src
+#+end_src
 
 * run
 

@@ -49,3 +49,11 @@ make
 make extra
 make install INSTALL_DIR=$HOME/sw
 +end_src
+
+* run
+
+#+begin_src
+export LD_LIBRARY_PATH=$HOME/sw/lib
+solve-field
+#+end_src
+

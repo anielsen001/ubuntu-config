@@ -44,7 +44,7 @@ sudo apt install libcairo2-dev libnetpbm10-dev netpbm libpng-dev libjpeg-dev lib
 
 * build
 
-#+begin_src
+#+begin_src sh
 make 
 make extra
 make install INSTALL_DIR=$HOME/sw
@@ -52,7 +52,7 @@ make install INSTALL_DIR=$HOME/sw
 
 * run
 
-#+begin_src
+#+begin_src sh
 export LD_LIBRARY_PATH=$HOME/sw/lib
 solve-field
 #+end_src

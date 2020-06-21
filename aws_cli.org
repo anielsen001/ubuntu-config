@@ -1,0 +1,44 @@
+#+TITLE: Intallation of AWS Cli Interface
+
+* Install
+
+Basically follow [[https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html][Amazon's instructions]], but use the option to install to a bin directory in my home instead.
+
+#+begin_src sh
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+./aws/install -i $HOME/sw/aws-cli -b $HOME/sw/bin
+#+end_src
+
+Note that both the -b and -i options must be provided for the custom location isntall to work.
+
+Test the install
+
+#+begin_src sh
+$ aws --version
+aws-cli/2.0.24 Python/3.7.3 Linux/5.4.0-37-generic botocore/2.0.0dev28
+#+end_src
+
+* Configure
+
+Set up user credentials, using the [[https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html][configure command]
+
+#+begin_src
+aws configure
+#+end_src
+
+The credentials are stored in a file
+
+#+begin_src sh
+$HOME/.aws/credentials
+#+end_src
+
+This file can be edited directly and you can add additional profiles if you have several accounts or contexts. You can also just create the $HOME/.aws directory and copy this file to another computer, but make sure it's permissions are locked down to just your user.
+
+#+begin_src sh
+chmod 700 $HOME/.aws
+chmod 600 $HOME/.aws/credentials
+#+end_src
+
+* References:
+https://docs.aws.amazon.com/cli/index.html

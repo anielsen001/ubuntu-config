@@ -1,0 +1,24 @@
+#+TITLE: Install Oracle VirtualBox
+
+This installs from the Oracle repositories. As of 2020-06-23, this install version 6.1.10.
+
+#+begin_src sh
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
+echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib" | \
+     sudo tee -a /etc/apt/sources.list.d/virtualbox.list
+sudo apt update
+sudo apt install virtualbox-6.1
+#+end_src
+
+Extension pack
+
+#+begin_src sh
+wget https://download.virtualbox.org/virtualbox/6.1.8/Oracle_VM_VirtualBox_Extension_Pack-6.1.8.vbox-extpack
+sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-6.1.8.vbox-extpack
+
+#+end_src
+
+* References:
+
+https://linuxize.com/post/how-to-install-virtualbox-on-ubuntu-20-04/

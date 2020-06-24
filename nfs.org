@@ -1,0 +1,21 @@
+#+TITLE: Set up NFS mounts
+
+* Client
+
+Install the nfs-common package
+
+#+begin_src sh
+sudo apt intall nfs-common
+#+end_src
+
+* Server
+
+Install the server tools
+
+#+begin_src sh
+sudo apt install nfs-kernel-server
+#+end_src
+
+* References
+
+https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nfs-mount-on-ubuntu-20-04

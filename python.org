@@ -6,7 +6,7 @@ This will install the required libraries:
 #+begin_src sh
 sudo apt install libssl-dev zlib1g-dev libbz2-dev ncurses-dev uuid-dev
 sudo apt install build-essential libncurses5-dev libgdbm-dev libnss3-dev libreadline-dev libffi-dev tk-dev
-sudo apt install libsqlite3-dev lzma-dev libgdbm-compat-dev lzma
+sudo apt install libsqlite3-dev liblzma-dev lzma-dev libgdbm-compat-dev lzma
 #+end_src
 
 * Python 3

@@ -1,0 +1,9 @@
+#+TITLE: LaTeX setup
+
+#+begin_src sh
+sudo apt install texlive-latex-base texlive-latex-extra
+sudo apt install texlive-bibtex-extra
+#+end_src
+
+* References
+https://linuxconfig.org/how-to-install-latex-on-ubuntu-18-04-bionic-beaver-linux

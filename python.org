@@ -9,9 +9,32 @@ sudo apt install build-essential libncurses5-dev libgdbm-dev libnss3-dev libread
 sudo apt install libsqlite3-dev lzma-dev libgdbm-compat-dev lzma
 #+end_src
 
+* Python 3
+
+Current release found at [[https://python.org]]
+
+#+begin_src sh
+wget https://www.python.org/ftp/python/3.8.3/Python-3.8.3.tar.xz
+#+end_src 
+
 Build python and install it into a user directory:
 #+begin_src sh
 ./configure --prefix=$HOME/sw --enable-shared --enable-optimizations --with-ensurepip=upgrade
 make -j12
 make install
+#+end_src
+
+* Python 2.7
+
+It was end of life on 1 Jan 2020, but it's still a zombie.
+
+#+begin_src sh
+https://www.python.org/downloads/release/python-2718/
+#end_src
+
+I always had problems building python 2.x with more than one thread.
+
+#+begin_src sh
+./configure --prefix=$HOME/sw --enable-optimizations --with-ensurepip=yes --enable-shared LDFLAGS=-Wl,-rpath=/home/apn/sw/lib
+make
 #+end_src

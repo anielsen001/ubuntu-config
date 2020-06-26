@@ -1,0 +1,41 @@
+#+TITLE: VNC configuration
+
+* viewer
+
+install the viewer
+
+#+begin_src sh
+sudo apt install tigervnc-viewer
+#+end_src
+
+use ssh to tunnel the remote port over to the local system. Here XX is the port number associated with the vnc server on the remote system.
+
+#+begin_src sh
+ssh -L 59XX:localhost:59XX -N -f user@host
+#+end_src
+
+Start the vncviewer. The encodings help over slower connections, but are only avaialbe with some clients.
+
+#+begin_src sh
+xtigervncviewer localhost:XX
+#+end_src
+
+#+begin_src sh
+vncviewer -encodings "copyrect hextile" localhost:XX
+#+end_src
+
+* server
+
+make sure conda is not running before starting the server. Conda seems to steal the dbus and create problmes. 
+
+General configuration depends upon the system running the server. The following seems to work OK.
+
+#+begin_src sh
+vncserver -geometry 1298x950 :99
+#+end_src
+
+The server can be killed with
+
+#+begin_src sh
+vncserver -kill :99
+#+end_src

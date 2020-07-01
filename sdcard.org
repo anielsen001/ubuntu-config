@@ -1,0 +1,44 @@
+#+TITLE: SD Card
+
+* Fake detection
+
+Testing for fake SD Cards
+
+Install f3
+
+#+begin_src sh
+sudo apt install f3
+#+end_src
+
+On my system, it's run like this
+
+#+begin_src sh
+sudo f3probe --destructive --time-ops /dev/mmcblk0
+
+F3 probe 7.2
+Copyright (C) 2010 Digirati Internet LTDA.
+This is free software; see the source for copying conditions.
+
+WARNING: Probing normally takes from a few seconds to 15 minutes, but
+         it can take longer. Please be patient.
+
+Good news: The device `/dev/mmcblk0' is the real thing
+
+Device geometry:
+	         *Usable* size: 59.69 GB (125173760 blocks)
+	        Announced size: 59.69 GB (125173760 blocks)
+	                Module: 64.00 GB (2^36 Bytes)
+	Approximate cache size: 0.00 Byte (0 blocks), need-reset=no
+	   Physical block size: 512.00 Byte (2^9 Bytes)
+
+Probe time: 1'16"
+ Operation: total time / count = avg time
+      Read: 246.3ms / 4816 = 51us
+     Write: 1'15" / 4192321 = 17us
+     Reset: 0us / 1 = 0us
+
+#+end_src
+
+* References
+
+https://superuser.com/questions/631633/how-to-tell-if-you-have-a-fake-sd-card

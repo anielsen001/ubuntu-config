@@ -1,0 +1,16 @@
+#+TITLE: Laptop specific commands
+
+How to keep a laptop running when on a/c power even when the lid is closed. 
+
+This is the GUI editor
+
+#+begin_src sh
+sudo apt install dconf-config
+#+end_src
+
+
+
+* References:
+
+https://askubuntu.com/questions/1059705/keep-a-laptop-running-with-closed-lid
+https://askubuntu.com/questions/15520/how-can-i-tell-ubuntu-to-do-nothing-when-i-close-my-laptop-lid?noredirect=1&lq=1

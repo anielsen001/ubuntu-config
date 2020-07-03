@@ -1,0 +1,18 @@
+#+TITLE: gdal and python
+
+I needed to read DTED. GDAL is apparently the preferred solution with python.
+
+I had installed gdal 2.4.0 on my laptop, but that refused to build with a pip install of gdal like this into a python3 venv virtual enviroment.
+
+#+begin_src sh
+python3 -m pip install gdal==2.4.0 --global-option=build_ext --global-option="-I$HOME/sw/include/"
+#+end_src
+
+I upgraded to gdal 2.4.4 and the pip install went smoothly
+#+begin_src sh
+python3 -m pip install gdal==2.4.4 --global-option=build_ext --global-option="-I$HOME/sw/include/"
+#+end_src
+
+* References:
+
+https://gist.github.com/cspanring/5680334

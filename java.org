@@ -1,0 +1,25 @@
+#+TITLE: java
+
+The default installs are currently java 11
+
+#+begin_src sh
+sudo apt install default-jre
+sudo apt install default-jdk
+#+end_src
+
+Older java versions can also be installed
+
+#+begin_src sh
+sudo apt install openjdk-8-jre-headless
+sudo apt install openjdk-8-jdk-headless
+#+end_src 
+
+java versions can be switched with
+
+#+begin_src sh
+sudo update-alternatives --config java
+#+end_src
+
+* References:
+
+https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-20-04

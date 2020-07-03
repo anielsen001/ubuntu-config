@@ -1,6 +1,31 @@
-#+TITLE: gdal and python
+#+TITLE: GDAL and python
 
 I needed to read DTED. GDAL is apparently the preferred solution with python.
+
+* Ubnutu 20.04
+
+- There is a ppa (sudo add-apt-repository ppa:ubuntugis/ppa), but as of today (2020-07-03) there is not support for ubuntu 20.04.
+- The default focal repos contain gdal 3.0.4 and can be installed with
+#+begin_src sh
+sudo apt-get install gdal-bin
+sudo apt-get install libgdal-dev
+#+end_src
+
+#+begin_src sh
+export VENV_DIR=$PWD/venv-star-nav
+python3 -m venv $VENV_DIR
+source $VENV_DIR/bin/activate
+
+python3 -m pip install gdal=3.0.4 
+#+end_src
+
+https://mothergeo-py.readthedocs.io/en/latest/development/how-to/gdal-ubuntu-pkg.html
+
+* Ubuntu 18.04
+
+Followed building instructions for 2.4.4 as below
+
+* Ubuntu 16.04
 
 I had installed gdal 2.4.0 on my laptop, but that refused to build with a pip install of gdal like this into a python3 venv virtual enviroment.
 

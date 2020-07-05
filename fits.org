@@ -1,0 +1,11 @@
+#+TITLE: FITS tools
+
+* fv
+
+FITS viewer from https://heasarc.gsfc.gov/ftools/fv/
+
+Can be installed from Ubuntu repos:
+
+#+begin_src sh
+supo apt install ftools-fv
+#+end_src

@@ -1,0 +1,15 @@
+#+TITLE: Android Studio
+
+wants libncurses.so.5, but ubunutu 20.04 comes with libncurses 6. 
+Some people successfully created a symlink
+https://stackoverflow.com/questions/17005654/error-while-loading-shared-libraries-libncurses-so-5
+
+Two symlinks were needed. Could not symlink to a higher-level symlink, otherwise Android studio appeared to try and read the symlink as a file and found it too short. 
+#+begin_src sh
+cd /usr/lib/x86_64-linux-gnu
+sudo ln -s libncurses.so.6.2 libncurses.so.5
+sudo ln -s libtinfo.so.6.2 libtinfo.so.5
+#+end_src
+
+Also, needed to build with gradle form command line vice within the IDE in order to see the full error message and have enough information for debugging.
+

@@ -14,7 +14,7 @@ sudo apt-get install libgdal-dev
 GDAL can be installed into a virtual environment with:
 
 #+begin_src sh
-export VENV_DIR=$PWD/venv-star-nav
+export VENV_DIR=$PWD/venv-dir/
 python3 -m venv $VENV_DIR
 source $VENV_DIR/bin/activate
 

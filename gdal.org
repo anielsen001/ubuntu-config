@@ -18,7 +18,7 @@ export VENV_DIR=$PWD/venv-dir/
 python3 -m venv $VENV_DIR
 source $VENV_DIR/bin/activate
 
-# numpy numst be installed first
+# numpy must be installed first
 # https://gis.stackexchange.com/questions/153199/import-error-no-module-named-gdal-array/274328
 python3 -m pip install numpy
 

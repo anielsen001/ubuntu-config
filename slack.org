@@ -1,0 +1,9 @@
+#+TITLE: Slack client 
+
+Slack can be install with snap
+
+https://www.omgubuntu.co.uk/2018/01/install-slack-app-ubuntu
+
+#+begin_src sh
+sudo snap install slack --classic
+#+end_src

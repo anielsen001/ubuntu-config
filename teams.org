@@ -1,0 +1,17 @@
+#+TITLE: Microsoft teams client for Ubuntu
+
+Official Microsroft link: https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/download-app#allDevicesSection
+
+Info here: https://kifarunix.com/install-microsoft-teams-client-on-ubuntu-20-04-18-04/
+
+* configure repository for the teams client
+#+begin_src sh
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+
+echo "deb [arch=amd64] https://packages.microsoft.com/repos/ms-teams stable main" | sudo tee /etc/apt/sources.list.d/teams.list
+
+sudo apt update
+
+sudo apt install teams
+#+end_src
+

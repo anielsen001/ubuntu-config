@@ -1,0 +1,8 @@
+#+TITLE: mattermost
+
+#+begin_src sh
+sudo snap install mattermost-desktop
+#+end_src
+
+* References:
+https://snapcraft.io/install/mattermost-desktop/ubuntu

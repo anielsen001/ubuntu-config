@@ -8,6 +8,10 @@ Install the nfs-common package
 sudo apt intall nfs-common
 #+end_src
 
+** see also
+
+[[fstab.org][fstab.org]] for mounting info.
+
 * Server
 
 Install the server tools

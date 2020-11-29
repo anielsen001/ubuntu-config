@@ -32,7 +32,7 @@ sudo usermod -aG yubikey username
 
 #+begin_src sh
 mkdir ~/.yubico
-pamu2fcfg > ~/.yubuco/u2f_keys
+pamu2fcfg > ~/.yubico/u2f_keys
 #+end_src
 
 I like to put the keys in a directory controlled by root to protect them

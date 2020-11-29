@@ -1,0 +1,29 @@
+#+TITLE: fstab
+
+* Add drives to fstab
+
+Get UUID of drive
+#+begin_src
+sudo blkid
+#+end_src
+
+Append a line to the /etc/fstab
+#+begin_src
+UUID={YOUR-UID}    {/path/to/mount/point}               {file-system-type}    defaults,errors=remount-ro 0       1
+#+end_src
+
+* Add NFS mounts
+
+Add nfs-common with apt
+#+begin_src
+sudo apt install nfs-common
+#+end_src
+
+Append a line to the /etc/fstab like
+#+begin_src
+10.10.0.10:/backups /var/backups  nfs      defaults    0       0
+#+end_src
+
+
+* References
+https://www.cyberciti.biz/faq/linux-finding-using-uuids-to-update-fstab/

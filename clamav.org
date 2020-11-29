@@ -1,0 +1,20 @@
+#+TITLE: ClamAV
+
+* Install
+
+#+begin_src
+sudo apt instll clamav clamav-daemon
+#+end_src
+
+* update database
+
+#+begin_src
+sudo systemctl stop clamav-freshclam
+sudo freshclam
+sudo systemctl start clamav-freshclam
+#+end_src
+
+
+* References:
+
+https://linuxhint.com/install_clamav_ubuntu/

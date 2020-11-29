@@ -12,6 +12,7 @@ You need to install the ppa and them the required modules
 sudo add-apt-repository ppa:yubico/stable
 sudo apt-get update
 sudo apt-get install libpam-u2f
+sudo apt install libpam-yubico yubikey-manager
 #+end_src
 
 * configure groups and accounts

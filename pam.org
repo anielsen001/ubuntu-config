@@ -1,0 +1,11 @@
+#+TITLE: PAM configuration
+
+* lock account after incorrect login attempts
+
+https://www.linuxtechi.com/lock-user-account-incorrect-login-attempts-linux/
+
+#+begin_src 
+# here are the per-package modules (the "Primary" block)
+auth    required                        pam_tally2.so onerr=fail deny=5 unlock_time=60 audit
+auth    [success=1 default=ignore]      pam_unix.so nullok_secure
+#+end_src

@@ -21,5 +21,4 @@ network:
       parameters:
         mode: 802.3ad
         lacp-rate: fast
-        primary: enp5s0
 #+end_src

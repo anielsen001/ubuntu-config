@@ -34,11 +34,11 @@ mkdir ~/.yubico
 pamu2fcfg > ~/.yubuco/u2f_keys
 #+end_src
 
-I like to put the keys in a directory controlled root to protect them
+I like to put the keys in a directory controlled by root to protect them
 
 #+begin_src sh
 sudo mkidr /var/yubico
-sudo cp .yuboco/u2f_keys /var/yubico/u2f_keys
+sudo cat .yuboco/u2f_keys >> /var/yubico/u2f_keys
 #+end_src
 
 In order to use the u2f_keys here, the username for the key must be put into the u2f_keys files. This step will allow the key to be associated with the user. This part is left out of the yubikey guide.

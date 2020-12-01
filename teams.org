@@ -5,6 +5,7 @@ Official Microsroft link: https://www.microsoft.com/en-us/microsoft-365/microsof
 Info here: https://kifarunix.com/install-microsoft-teams-client-on-ubuntu-20-04-18-04/
 
 * configure repository for the teams client
+
 #+begin_src sh
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 
@@ -14,4 +15,14 @@ sudo apt update
 
 sudo apt install teams
 #+end_src
+
+
+* removal of teams
+
+Teams can also be removed with apt. 
+
+#+begin_src sh
+sudo apt remove teams
+#+end_src
+
 

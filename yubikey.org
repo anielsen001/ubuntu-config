@@ -87,6 +87,7 @@ If there are issues, use the last line with the debug information turned on, and
 
 If you only want the yubikey to be used for certain authentication operations like sudo or login, you can @include the yubikey file in those configs.
 
+With this setup, you can use ssh to log in with ssh keys and bypass the yubikey, but you will not be able to sudo or use escalated privileges unless your yubikey is physicially plugged into the computer and you can touch the button when needed. 
 
 * References:
 

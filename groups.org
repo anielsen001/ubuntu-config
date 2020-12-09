@@ -1,0 +1,27 @@
+#+TITLE: Group management
+
+Users can be added via the Users panel in Settings, but you cannot control groups this way. 
+
+* New groups
+
+New groups can be added with 
+#+begin_src
+sudo groupadd <group>
+#+end_src
+
+* Adding user to existing group
+
+#+begin_src sh
+sudo usermod -a -G <group> <user>
+#+end_src
+
+The -a flag is essential to append groups to the user, otherwise their list of groups is replaced with this group. <group> can be a comma separated list of groups.
+
+Adding someone to a group won't take effect unless they log back in. You can use
+#+begin_src sh
+newgrp <group>
+#+end_src
+to add the group for the current session
+
+* References:
+https://askubuntu.com/questions/79565/how-to-add-existing-user-to-an-existing-group

@@ -30,18 +30,20 @@ sudo usermod -aG yubikey username
 
 * Create U2F keys
 
+Add the first key ths way
+
 #+begin_src sh
 mkdir ~/.yubico
-pamu2fcfg > ~/.yubico/u2f_keys
+pamu2fcfg  > ~/.yubico/u2f_keys
 #+end_src
 
-A second key can be added similarly, only one key plugged into the computer at a time. 
+A second key can be added similarly, only one key plugged into the computer at a time. The -n flag changes the output to make it useful for appending.
 
 #+begin_src sh
-pamu2fcfg >> ~/.yubico/u2f_keys
+pamu2fcfg -n >> ~/.yubico/u2f_keys
 #+end_src
 
-I like to put the keys in a directory controlled by root to protect them
+I like to put the keys in a directory controlled by root to protect them. 
 
 #+begin_src sh
 sudo mkidr /var/yubico

@@ -9,3 +9,16 @@ https://www.linuxtechi.com/lock-user-account-incorrect-login-attempts-linux/
 auth    required                        pam_tally2.so onerr=fail deny=5 unlock_time=60 audit
 auth    [success=1 default=ignore]      pam_unix.so nullok_secure
 #+end_src
+
+The pam tally count can be checked with
+#+begin_src
+sudo pam_tally2 --user=<user>
+#+end_src
+
+and reest with
+
+#+begin_src
+sudo pam_tally2 --user=<user> --reset
+#+end_src
+
+The counter needs to be reset or you'll always exceed the counter limit and get locked.

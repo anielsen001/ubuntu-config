@@ -4,6 +4,8 @@
 
 https://www.linuxtechi.com/lock-user-account-incorrect-login-attempts-linux/
 
+The yubikey section must come first, if included, followed by this. 
+
 #+begin_src 
 # here are the per-package modules (the "Primary" block)
 auth    required                        pam_tally2.so onerr=fail deny=5 unlock_time=60 audit
@@ -22,3 +24,10 @@ sudo pam_tally2 --user=<user> --reset
 #+end_src
 
 The counter needs to be reset or you'll always exceed the counter limit and get locked.
+
+The counter can be automatically reset on success by adding the following line to /etc/pam.d/common-account at the beginning
+#+begin_src
+account     required      pam_tally2.so
+#+end_src
+
+https://www.nextstep4it.com/pam_tally2-command-lock-unlock-ssh-failed-logins/

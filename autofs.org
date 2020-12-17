@@ -1,0 +1,37 @@
+#+TITLE: autofs configuration
+
+* auto.master
+
+Edit the /etc/auto.master file. on 20.04, I did not have to do anything other than add lines to specific nfs server mounts at the end
+
+Add a line that refers to the mount point and the file that describes what to mount. 
+
+For example:
+#+begin_src 
+/mnt/syn    /etc/auto.syn
+#+end_src
+
+/mnt/syn refers to a directory tree where the mounts points will be mounted under.
+
+/etc/auto.syn is a file that describes what to mount unter /mnt/syn
+
+* auto.syn
+
+auto.syn contains lines that describe what to mount under the directory tree
+
+For example:
+#+begin_src
+homes -fstype=nfs server-name:/volume1/homes
+#+end_src
+
+will mount the /volume1/homes from nfs server-name to /mnt/syn/homes
+
+* reload the autofs service
+
+#+begin_src
+sudo systemctl reload autofs.service
+#+end_src
+
+* References:
+
+https://askubuntu.com/questions/884389/auto-mount-nfs-via-autonfs

@@ -1,0 +1,106 @@
+#+TITLE: Minecraft Server Setup
+
+* Install requirements
+
+#+begin_src
+sudo apt install wget screen default-jdk nmap
+#+end_src
+
+* Create Minecraft user to run the server
+
+The minecraft user will have a home directory in /opt/minecraft
+
+
+#+begin_src
+sudo useradd -m -r -d /opt/minecraft minecraft
+#+end_src
+
+* Create directroy for server
+
+Multiple servers can be run, create a directory for the particular server, folliwng the link below, using "survival"
+
+#+begin_src
+sudo mkdir /opt/minecraft/survival
+#+end_src
+
+* Download the mincraft server jar file
+
+go here to find the link to the current server
+#+begin_src
+https://www.minecraft.net/en-us/download/server
+#+end_src
+
+#+begin_src
+sudo wget -O /opt/minecraft/survival/minecraft_server.jar https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar
+#+end_src
+
+* Set up server
+
+Accept the terms uf the EULA
+#+begin_src
+sudo bash -c "echo eula=true > /opt/minecraft/survival/eula.txt" 
+#+end_src
+
+Make the minecraft user the owner
+#+begin_src
+sudo chown -R minecraft /opt/minecraft/survival/
+#+end_src
+
+Setup systemd startup script by creating a script
+#+begin_src
+sudo nano /etc/systemd/system/minecraft@.service 
+#+end_src
+
+And inserting these contents
+#+begin_src
+[Unit]
+Description=Minecraft Server: %i
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/minecraft/%i
+
+User=minecraft
+Group=minecraft
+
+Restart=always
+
+ExecStart=/usr/bin/screen -DmS mc-%i /usr/bin/java -Xmx4G -jar minecraft_server.jar nogui
+
+ExecStop=/usr/bin/screen -p 0 -S mc-%i -X eval 'stuff "say SERVER SHUTTING DOWN IN 5 SECONDS. SAVING ALL MAPS..."5'
+ExecStop=/bin/sleep 5
+ExecStop=/usr/bin/screen -p 0 -S mc-%i -X eval 'stuff "save-all"5'
+ExecStop=/usr/bin/screen -p 0 -S mc-%i -X eval 'stuff "stop"5'
+
+
+[Install]
+WantedBy=multi-user.target
+#+end_src
+
+* Run the server
+
+Start the server
+#+begin_src
+$ sudo systemctl start minecraft@survival
+#+end_src
+
+Check server status
+#+begin_src
+sudo systemctl status minecraft@survival
+#+end_src
+
+Set server to start on boot
+#+begin_src
+sudo systemctl enable minecraft@survival
+#+end_src
+
+* server setting
+
+Minecraft server settings are in this file 
+#+begin_src 
+sudo nano /opt/minecraft/linuxconfig/server.properties
+#+end_src
+
+* References
+
+https://linuxconfig.org/ubuntu-20-04-minecraft-server-setup

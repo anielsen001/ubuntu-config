@@ -1,0 +1,15 @@
+#+TITLE: Veracrypt
+
+Veracrypt home page is here: [[https://www.veracrypt.fr/en/Home.html]]
+
+Downloads are here: [[https://www.veracrypt.fr/en/Downloads.html]]
+
+Requred packages:
+#+begin_src
+sudo apt install libwxgtk3.0-gtk3-dev
+#+end_src
+
+#+begin_src
+sudo dpkg -i veracrypt-1.24-Update7-Ubuntu-20.04-amd64.deb 
+sudo dpkg -i veracrypt-console-1.24-Update7-Ubuntu-20.04-amd64.deb
+#+end_src

@@ -1,0 +1,6 @@
+#+TITLE: Minecraft
+
+Minecraft downloads can be found here: [[https://www.minecraft.net/en-us/download/alternative]]
+
+You must now have a microsoft account to create a minecraft account.
+

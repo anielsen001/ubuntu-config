@@ -1,0 +1,9 @@
+#+TITLE: PDF Manipulation tools
+
+* pdf tool kit
+
+pdftk is avaailable as a snap
+
+#+begin_src
+sudo snap install pdftk
+#+end_src

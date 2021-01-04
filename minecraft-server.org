@@ -94,12 +94,37 @@ Set server to start on boot
 sudo systemctl enable minecraft@survival
 #+end_src
 
+The server can be stopped with
+#+begin_src
+$ sudo systemctl stop minecraft@survival
+#+end_src
+
 * server setting
 
 Minecraft server settings are in this file 
 #+begin_src 
 sudo nano /opt/minecraft/linuxconfig/server.properties
 #+end_src
+
+User permission settings can be set in the file ops.json, using the following format:
+#+begin_srch
+[
+  {
+    "uuid": "UUID-USER-1",
+    "name": "user1",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "UUID-user-2",
+    "name": "user2",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  }
+]
+#+end_src
+
+You can find UUIDs for users here [[https://mcuuid.net/]]
 
 * References
 

@@ -107,7 +107,7 @@ sudo nano /opt/minecraft/linuxconfig/server.properties
 #+end_src
 
 User permission settings can be set in the file ops.json, using the following format:
-#+begin_srch
+#+begin_src
 [
   {
     "uuid": "UUID-USER-1",

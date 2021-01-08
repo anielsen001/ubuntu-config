@@ -6,3 +6,10 @@ Download the installer from Xilinx website.
 
 Vitis can be installed as a suser, but there is a script that installs some required libraries that must be run as root.
 
+Installed to /opt/Xilinx
+
+To run one of the tools
+#+begin_src
+source /opt/Xilinx/Vitis/2020.02/settings64.sh
+vivado
+#+end_src

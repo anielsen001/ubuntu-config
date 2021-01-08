@@ -1,0 +1,8 @@
+#+TITLE: Xilinx Design tools
+
+* Vitis - contains Vivado
+
+Download the installer from Xilinx website. 
+
+Vitis can be installed as a suser, but there is a script that installs some required libraries that must be run as root.
+

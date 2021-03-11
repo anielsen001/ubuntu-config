@@ -22,6 +22,12 @@ sudo dislocker <partition> -u<password> -- /media/bitlocker
 sudo mount -o loop /media/bitlocker/dislocker-file /media/bitlockermount
 #+end_src
 
+* ummounting
+
+#+begin_src sh 
+sudo umount /media/bitlockermount/
+sudo umount /media/bitlocker
+#+end_src
 
 * References:
 https://www.linuxuprising.com/2019/04/how-to-mount-bitlocker-encrypted.html

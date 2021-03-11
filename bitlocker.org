@@ -1,0 +1,27 @@
+#+TITLE: Using Microsoft bitlocker encrypted drives
+
+This requires dislocker and I uesd gparted to determine which partition needs to be decrypted
+#+begin_src sh
+sudo apt install dislocker
+sudo apt install gparted
+#+end_src
+
+* create directories for mount points
+#+begin_src sh
+sudo mkdir -p /media/bitlocker
+sudo mkdir -p /media/bitlockermount
+#+end_src
+
+* find encrypted partition
+
+In gparted it will be labeled "bitlocker"
+
+#+begin_src sh
+sudo dislocker <partition> -u<password> -- /media/bitlocker
+
+sudo mount -o loop /media/bitlocker/dislocker-file /media/bitlockermount
+#+end_src
+
+
+* References:
+https://www.linuxuprising.com/2019/04/how-to-mount-bitlocker-encrypted.html

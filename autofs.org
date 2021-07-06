@@ -1,5 +1,11 @@
 #+TITLE: autofs configuration
 
+* install autofs
+
+#+begin_src sh
+sudo apt install autofs
+#+end_src
+
 * auto.master
 
 Edit the /etc/auto.master file. on 20.04, I did not have to do anything other than add lines to specific nfs server mounts at the end

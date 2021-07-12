@@ -1,0 +1,27 @@
+#+TITLE: bash-git-prompt
+
+bash-git-prompt: https://github.com/magicmonty/bash-git-prompt
+
+configure bash-git-prompt, add the following to .bashrc file
+
+#+begin_src sh
+# for bash-git-prompt
+function prompt_callback {
+    #gp_set_window_title "\033]0;$USER@$HOSTNAME:$PWD\007"
+    gp_set_window_title "\033]0;$USER@$HOSTNAME:$PWD"
+    if [ `jobs | wc -l` -ne 0 ]; then
+        echo -n " jobs:\j"
+    fi
+}
+
+# bash-git-prompt
+# https://github.com/magicmonty/bash-git-prompt
+if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
+    GIT_PROMPT_ONLY_IN_REPO=1
+    #GIT_PROMPT_START="_LAST_COMMAND_INDICATOR_ ${Yellow}${USER}@${HOSTNAME}:${PWD}${ResetColor}"
+    GIT_PROMPT_START="_LAST_COMMAND_INDICATOR_ ${Yellow}\u@\h:\w${ResetColor}"
+    source $HOME/.bash-git-prompt/gitprompt.sh
+fi
+
+
+#+end_src

@@ -1,0 +1,9 @@
+#+TITLE: Syncthing
+
+* general
+
+https://syncthing.net/
+
+* Ubuntu
+
+https://apt.syncthing.net/

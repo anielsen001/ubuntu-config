@@ -1,0 +1,10 @@
+#+TITLE: zoom
+
+https://support.zoom.us/hc/en-us/articles/204206269-Installing-or-updating-Zoom-on-Linux
+
+https://zoom.us/client/latest/zoom_amd64.deb
+
+#+begin_src sh
+wget https://zoom.us/client/latest/zoom_amd64.deb
+sudo apt install -y ./zoom_amd64.deb
+#+end_src

@@ -5,7 +5,7 @@
 Install the nfs-common package
 
 #+begin_src sh
-sudo apt intall nfs-common
+sudo apt install nfs-common
 #+end_src
 
 ** see also

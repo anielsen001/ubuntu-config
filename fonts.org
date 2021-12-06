@@ -1,0 +1,16 @@
+#+TITLE: Fonts
+
+* Microsoft Fonts
+
+Microsoft fonts can be installed with:
+
+#+begin_src sh
+sudo apt-get install ttf-mscorefonts-installer
+sudo fc-cache
+#+end_src
+
+* References
+
+https://linuxconfig.org/install-microsoft-fonts-on-ubuntu-20-04-focal-fossa-desktop
+
+https://itsfoss.com/install-microsoft-fonts-ubuntu/

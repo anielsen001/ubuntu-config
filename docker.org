@@ -1,0 +1,12 @@
+#+TITLE: Install docker and related tools
+
+#+begin_src
+sudo apt install docker
+sudo apt install docker-compose
+#+end_src
+
+In order to run docker as a user, add that user to the docker group.
+
+#+begin_src sh
+usermod -a -G docker <username>
+#+end_src

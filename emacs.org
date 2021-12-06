@@ -1,0 +1,26 @@
+#+TITLE: emacs
+
+* org-mode 
+
+in .emacs include the following
+#+begin_src elisp
+
+#+end_src 
+
+** org-reveal 
+
+- Detailed instructions can be found here: https://github.com/yjwen/org-reveal
+- Get reveal from here: https://github.com/hakimel/reveal.js/
+- Get org-reveal from here: https://github.com/yjwen/org-reveal.git
+#+begin_src sh
+git clone https://github.com/yjwen/org-reveal.git
+#+end_src
+- Add the location of the ox-reveal.el file to the load path
+- Add the following to the .emacs file
+- set the location of org-reveal-root
+- Add the following to the .emacs file:
+#+begin-src elisp
+;; html export from org-mode
+(require 'ox-reveal)
+(setq org-reveal-root "file:///home/apn/sw/reveal.js")
+#+end_src

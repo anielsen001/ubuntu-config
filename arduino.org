@@ -1,0 +1,9 @@
+#+TITLE: Arduino
+
+Get latest version here: [[https://www.arduino.cc/en/software]]
+
+Download, extract and run
+#+begin_src sh
+sudo ./install.sh
+#+end_src
+

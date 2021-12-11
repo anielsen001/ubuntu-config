@@ -7,3 +7,10 @@ Download, extract and run
 sudo ./install.sh
 #+end_src
 
+The IDE needs python3 and pyserial installed. But seems to try and use python2. I created a virtual environment with python3 and then install pyserial into the venv. Then activate the venv and run arduino.
+#+begin_src sh
+python3 -m venv venv_arduino
+source venv_arduino/bin/activate
+python3 -m pip install pyserial
+arduino
+#+end_src

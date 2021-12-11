@@ -14,3 +14,9 @@ source venv_arduino/bin/activate
 python3 -m pip install pyserial
 arduino
 #+end_src
+
+the user must be in the dialout group as well to interact via serial connection
+#+begin_src sh
+sudo adduser <user> dialout
+#+end_src
+The user will have to log out and log back in for the change to take effect.

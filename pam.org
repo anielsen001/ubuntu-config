@@ -6,6 +6,8 @@ https://www.linuxtechi.com/lock-user-account-incorrect-login-attempts-linux/
 
 The yubikey section must come first, if included, followed by this. 
 
+These edits are made in /etc/pam.d/common-auth
+
 #+begin_src 
 # here are the per-package modules (the "Primary" block)
 auth    required                        pam_tally2.so onerr=fail deny=5 unlock_time=60 audit

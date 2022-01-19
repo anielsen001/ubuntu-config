@@ -1,6 +1,17 @@
 #+TITLE: Minecraft
 
+* Initial installation
+
 Minecraft downloads can be found here: [[https://www.minecraft.net/en-us/download/alternative]]
 
 You must now have a microsoft account to create a minecraft account.
+
+* Updaeted minecraft versions
+
+Often an updated mincecraft version will require a newer version of java than the one installed. In this case the minecraft launcher will start, but when you try to start minecraft, you get an "Error code 0"
+
+- Find out which version of java is required for this version of minecraft.
+- Download the appropriate version from [[https://openjdk.java.net/install/][here]]. 
+- Extract this version somewhere 
+- Tell minecraft to use this version of java
 

@@ -1,0 +1,32 @@
+#+TITLE: Cleaning up /boot of kernel images
+
+If you don't run a
+#+begin_src sh
+sudo apt autoremove
+#+end_src
+frequently enough, the boot partition may become full, and then you won't be able to remove old kernels. Generally make sure you run an autoremove after doing an upgrade, which will insure that unneeded pacakgese are removed. 
+
+In order to remove old kernels and get the update process to succeed, you have to manually remove some old kernels. Do the following:
+- Verify the current working kernel with
+#+begin_src sh
+uname -r
+#+end_src
+You will want to make sure you don't remove this kernel. 
+
+Get a list of all the kernels installed on the boot partition
+#+begin_src sh
+dpkg --list 'linux-image*' | grep ^ii
+#+end_src
+
+Remove the oldest by version number first:
+#+begin_src sh
+sudo apt-get remove linux-image-VERSION
+#+end_src
+
+Now try running an autoremove
+#+begin_src sh
+sudo apt autoremove
+#+end_src
+
+* References:
+https://askubuntu.com/questions/345588/what-is-the-safest-way-to-clean-up-boot-partition

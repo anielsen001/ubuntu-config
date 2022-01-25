@@ -23,6 +23,8 @@ sudo dpkg -i rclone-v1.57.0-linux-amd64.deb
 
 * Rclone configure
 
+https://stackoverflow.com/questions/68632847/how-can-i-download-the-large-file-from-google-drive-using-rclone
+
 https://rclone.org/drive/#making-your-own-client-id
 
 https://www.howtogeek.com/451262/how-to-use-rclone-to-back-up-to-google-drive-on-linux/#:~:text=In%20your%20browser%20window%2C%20click,return%20to%20the%20terminal%20window.

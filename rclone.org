@@ -2,19 +2,19 @@
 
 /usr/bin/rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats 1s --stats-file-name-length 0 --disable copy --log-file rclone_log.txt "google-drive:" "/local/drive"
 
---update :: skip any files at destination that are newer than source
---transfers :: number of transfers to run in parallel
---checkers :: number of quality checkers to run in parallel
---contimeout :: connection time out
---timeout :: IO idle timeout
---retries :: retry entire sync if it fails this many times
---low-level-retries :: how many times to retry a failing operation
---disable copy :: disable server side copies. Only needed when copying between 2 google drives if you don't have sufficient permissions on both ends
---log-file :: save a log file
+- --update :: skip any files at destination that are newer than source
+- --transfers :: number of transfers to run in parallel
+- --checkers :: number of quality checkers to run in parallel
+- --contimeout :: connection time out
+- --timeout :: IO idle timeout
+- --retries :: retry entire sync if it fails this many times
+- --low-level-retries :: how many times to retry a failing operation
+- --disable copy :: disable server side copies. Only needed when copying between 2 google drives if you don't have sufficient permissions on both ends
+- --log-file :: save a log file
 
 * Rclone install
 
-The Rclone version in the ubuntu repositories for 20.04 LTS is out of date and will cause some errors. Instead, use at least Rclone version 1.56 or higher. The Rclone download page is [[https://rclone.org/downloads/]]
+The Rclone version in the ubuntu repositories for 20.04 LTS is out of date and will cause some errors when working with google drive. Instead, use at least Rclone version 1.56 or higher. The Rclone download page is [[https://rclone.org/downloads/]]
 
 Download the .deb and install with
 #+begin_src sh

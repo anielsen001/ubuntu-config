@@ -1,0 +1,11 @@
+# SAMBA/CIFS mounts
+
+## CLI mounting
+
+Mount a samba cifs share from the CLI with
+```bash
+sudo mount -t cifs -o user=<username>  //<ip address>/serverpath /local/path 
+```
+
+you will be prompted for your password on the server
+

@@ -1,0 +1,16 @@
+---
+title: VS Code
+format: html
+---
+
+Basically follows the [VS Code instructions](https://code.visualstudio.com/docs/setup/linux). Download and install the `.deb` package.
+
+```bash
+sudo dpkg -i code_1.84.2-1699528352_amd64.deb
+```
+
+This will add the repo to your apt configuration and VS Code will automatically update when updates are available. 
+
+## References
+
+[VS Code Installation instructions](https://code.visualstudio.com/docs/setup/linux)
